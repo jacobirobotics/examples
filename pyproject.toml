@@ -1,0 +1,22 @@
+[project]
+name = "jacobi-examples"
+version = "0.0.1"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.ruff]
+line-length = 140
+
+[tool.ruff.lint]
+select = ["A", "ASYNC", "COM", "E", "F", "G", "LOG", "N", "PIE", "PTH", "PYI", "RET", "RSE", "RUF100", "SIM", "TCH", "W", "Q"]
+
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = "single"
+multiline-quotes = "single"
+
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.pylint.'MESSAGES CONTROL']
+max-line-length = 140
+disable = "C0103,C0114,C0115,C0116,E0401,R0801,R0902,R1722,W0511"

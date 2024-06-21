@@ -1,0 +1,3 @@
+# Robotic Palletizing
+
+Robotic palletizers pick up and place boxes from a conveyor onto a pallet according to a predefined configuration that includes the pallet and box dimensions and a placement pattern. The use of robotic palletizers has become increasingly popular in manufacturing, warehousing, and distribution facilities due to the faster and safer automated palletizing process they offer. However, the increasing demand for 6 or 7-axis robots, while enhancing flexibility, also brings greater complexity in programming and optimization, leading to higher costs for engineering, onsite support, and reprogramming. In this tutorial, we introduce a short program created using the Jacobi platform, designed to be easily configurable for robotic palletizing.

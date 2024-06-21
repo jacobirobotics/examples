@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  lint-python:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Lint Python
+      run: |
+        python3 -m pip install ruff pylint
+        ruff check . --preview
+        pylint -j2 motion projects
