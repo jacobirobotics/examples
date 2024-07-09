@@ -10,7 +10,7 @@ int main() {
     auto planner = std::make_shared<Planner>("My Project", 0.01);  // delta_time in [s]
 
     // [Cloud version] Authenticate with your account API key by setting
-    // the `JACOBI_API_KEY` and `JACOBI_API_SECRET` environment variable.
+    // the `JACOBI_API_KEY` environment variable.
 
     // 3. Plan motion defined in Studio project
     const auto trajectory = planner->plan("Home to Camera");

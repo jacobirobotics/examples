@@ -26,7 +26,7 @@ if __name__ == '__main__':
     planner = Planner(environment, 0.004)  # delta time in [s]
 
     # [Cloud version] Authenticate with your account API key by setting
-    # the `JACOBI_API_KEY` and `JACOBI_API_SECRET` environment variable.
+    # the `JACOBI_API_KEY` environment variable.
 
     # [On-prem version] You can optionally accelerate the computation to milliseconds by loading a trained motion plan
     # planner.load_motion_plan('quick-start.jacobi-plan')

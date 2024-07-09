@@ -18,7 +18,7 @@ int main() {
     auto planner = std::make_shared<Planner>(robot, 0.01); // [s]
 
     // [Cloud version] Authenticate with your account API key by setting
-    // the `JACOBI_API_KEY` and `JACOBI_API_SECRET` environment variable.
+    // the `JACOBI_API_KEY` environment variable.
 
     // 3. Define start and goal positions
     LinearMotion motion {

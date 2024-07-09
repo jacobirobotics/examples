@@ -27,7 +27,7 @@ if __name__ == '__main__':
     planner = Planner(environment)
 
     # [Cloud version] Authenticate with your account API key by setting
-    # the `JACOBI_API_KEY` and `JACOBI_API_SECRET` environment variable.
+    # the `JACOBI_API_KEY` environment variable.
 
     trajectory = planner.plan(
         start=[0, -0.3, 0, 0, 0, 0, 0] + [0, 0.3, 0, 0, 0, 0, 0],

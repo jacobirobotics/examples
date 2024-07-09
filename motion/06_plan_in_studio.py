@@ -6,7 +6,7 @@ if __name__ == '__main__':
     planner = Planner(project='My Project', delta_time=0.01)
 
     # [Cloud version] Authenticate with your account API key by setting
-    # the `JACOBI_API_KEY` and `JACOBI_API_SECRET` environment variable.
+    # the `JACOBI_API_KEY` environment variable.
 
     # 3. Plan motion defined in Studio project
     trajectory = planner.plan('Home to Camera')

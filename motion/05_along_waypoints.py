@@ -14,7 +14,7 @@ if __name__ == '__main__':
     planner.set_server_url('http://localhost:8080')
 
     # [Cloud version] Authenticate with your account API key by setting
-    # the `JACOBI_API_KEY` and `JACOBI_API_SECRET` environment variable.
+    # the `JACOBI_API_KEY` environment variable.
 
     motion = LowLevelMotion()
     motion.start = [-1.27, 0.61, -0.46, 0.0, -1.81, 0.0, 0.0]

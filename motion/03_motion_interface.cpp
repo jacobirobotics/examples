@@ -33,7 +33,7 @@ int main() {
     auto planner = std::make_shared<Planner>(environment, 0.01); // [s]
 
     // [Cloud version] Authenticate with your account API key by setting
-    // the `JACOBI_API_KEY` and `JACOBI_API_SECRET` environment variable.
+    // the `JACOBI_API_KEY` environment variable.
 
     // 4. Define motions that we want to compute
     Waypoint home {{0.0, 0.0, 0.0, 0.0, 0.0, 0.0}}; // [rad]
