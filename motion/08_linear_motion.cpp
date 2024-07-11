@@ -11,7 +11,7 @@ using namespace jacobi::robots;
 int main() {
     // 1. Set up the robot, transformations, and its kinematics limits
     auto robot = std::make_shared<YaskawaGP12>();
-    robot->base() = Frame::from_euler(0, 0, 0.44, 0, 0, 1.571);
+    robot->set_base(Frame::from_euler(0, 0, 0.44, 0, 0, 1.571));
     robot->max_acceleration = {2.0, 2.0, 2.0, 5.0, 5.0, 5.0};
 
     // 2. Set up the planner without any obstacles

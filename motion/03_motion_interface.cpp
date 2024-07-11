@@ -12,8 +12,8 @@ int main() {
 
     // 1. Set up the robot, transformations, and its kinematics limits
     auto robot = std::make_shared<YaskawaGP12>();
-    robot->base() = Frame::from_translation(0.0, 0.0, 0.765);
-    robot->flange_to_tcp() = Frame::from_translation(0.0, 0.0, 0.2);
+    robot->set_base(Frame::z(0.765));
+    robot->set_flange_to_tcp(Frame::z(0.2));
     robot->end_effector_obstacle = Convex::load_from_file(project_path / "ee_hull.obj");
     robot->max_velocity = {4.3, 3.4, 4.3, 7.0, 7.0, 9.0};
     robot->max_acceleration = {7.0, 7.0, 7.5, 15.0, 15.0, 18.0};

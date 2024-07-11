@@ -7,7 +7,7 @@ if __name__ == '__main__':
     robot = UniversalUR10e()
     robot.base = Frame(z=0.3)  # [m]
     robot.flange_to_tcp = Frame(z=0.15)  # [m]
-    robot.max_acceleration = [4.0, 4.0, 4.0, 4.0, 4.0, 4.0]  # [rad/s^2]
+    robot.set_speed(0.1)  # relative to max speed
 
     # 2. Setup obstacles in the robot's environment
     environment = Environment(robot)
@@ -22,8 +22,8 @@ if __name__ == '__main__':
         origin=Frame.from_translation(0.74, 0.0, 0.5),  # origin in [m]
     )
 
-    # 3. Set up the planner with the cycle time of the robot (alias the timer interval of trajectory steps)
-    planner = Planner(environment, 0.004)  # delta time in [s]
+    # 3. Set up the planner with the environment
+    planner = Planner(environment)
 
     # [Cloud version] Authenticate with your account API key by setting
     # the `JACOBI_API_KEY` environment variable.

@@ -10,9 +10,9 @@ using namespace jacobi::robots;
 int main() {
     // 1. Set up the robot, transformations, and its kinematics limits
     auto robot = std::make_shared<UniversalUR10e>();
-    robot->base() = Frame::from_translation(0, 0, 0.3);  // [m]
-    robot->flange_to_tcp() = Frame::from_translation(0, 0, 0.15);  // [m]
-    robot->max_acceleration = {4.0, 4.0, 4.0, 4.0, 4.0, 4.0};  // [rad/s^2]
+    robot->set_base(Frame::z(0.3));  // [m]
+    robot->set_flange_to_tcp(Frame::z(0.15));  // [m]
+    robot->set_speed(0.1);  // relative to max speed
 
     // 2. Setup obstacles in the robot's environment
     auto environment = std::make_shared<Environment>(robot);
@@ -27,8 +27,8 @@ int main() {
         Frame::from_translation(0.74, 0.0, 0.5)  // origin in [m]
     );
 
-    // 3. Set up the planner with the cycle time of the robot (alias the timer interval of trajectory steps)
-    auto planner = std::make_shared<Planner>(environment, 0.004);  // delta time in [s]
+    // 3. Set up the planner with the environment
+    auto planner = std::make_shared<Planner>(environment);
 
     // [Cloud version] Authenticate with your account API key by setting
     // the `JACOBI_API_KEY` environment variable.

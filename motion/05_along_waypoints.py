@@ -5,9 +5,7 @@ from jacobi.robots import FrankaPanda
 if __name__ == '__main__':
     # 1. Set up the robot, transformations, and its kinematics limits
     robot = FrankaPanda()
-    robot.max_velocity = [2.0, 2.0, 2.0, 2.0, 4.0, 4.0, 4.0]
-    robot.max_acceleration = [3.0, 3.0, 3.0, 3.0, 6.0, 6.0, 6.0]
-    robot.max_jerk = [100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0]
+    robot.set_speed(0.2)
 
     # 2. Set up the planner with the cycle time of the robot (alias the timer interval of trajectory steps)
     planner = Planner(robot, delta_time=0.001)  # [s]

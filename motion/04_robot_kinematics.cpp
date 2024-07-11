@@ -10,8 +10,8 @@ using namespace jacobi::robots;
 int main() {
     // 1. Set up the robot, and define the base frame as well as the flange to TCP transformation
     YaskawaGP12 robot;
-    robot.base() = Frame::from_translation(0.0, 0.0, 0.765);
-    robot.flange_to_tcp() = Frame::from_translation(0.0, 0.0, 0.2);
+    robot.set_base(Frame::z(0.765));
+    robot.set_flange_to_tcp(Frame::z(0.2));
 
     // 2. Forward Kinematics
     Config home_config {-1.57, -0.7042, -0.4648, 0.0, -1.809, 0.0};

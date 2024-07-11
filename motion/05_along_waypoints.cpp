@@ -10,9 +10,7 @@ using namespace jacobi::robots;
 int main() {
     // 1. Set up the robot and its kinematics limits
     auto robot = std::make_shared<FrankaPanda>();
-    robot->max_velocity = {2.0, 2.0, 2.0, 2.0, 4.0, 4.0, 4.0};
-    robot->max_acceleration = {3.0, 3.0, 3.0, 3.0, 6.0, 6.0, 6.0};
-    robot->max_jerk = {100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0};
+    robot->set_speed(0.2);
 
     // 2. Set up the planner with the cycle time of the robot (alias the timer interval of trajectory steps)
     auto planner = std::make_shared<Planner>(robot, 0.001); // [s]
