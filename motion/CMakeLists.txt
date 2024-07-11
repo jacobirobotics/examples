@@ -1,18 +1,18 @@
 cmake_minimum_required(VERSION 3.11)
 
 
-project(jacobi-examples)
+project(jacobi-motion-examples)
 
 
-option(BUILD_FIND_MOTION "Find a globally installed motion library." ON)
+option(BUILD_FIND_JACOBI "Find globally installed Jacobi libraries." ON)
 
 
-if(BUILD_FIND_MOTION)
+if(BUILD_FIND_JACOBI)
   find_package(jacobi-motion REQUIRED)
 endif()
 
 
-set(MOTION_EXAMPLES_LIST
+set(EXAMPLES_LIST
   01_quick_start_guide
   02_real_time_motion
   03_motion_interface
@@ -23,7 +23,7 @@ set(MOTION_EXAMPLES_LIST
   08_linear_motion
 )
 
-foreach(example IN LISTS MOTION_EXAMPLES_LIST)
-  add_executable(${example} motion/${example}.cpp)
+foreach(example IN LISTS EXAMPLES_LIST)
+  add_executable(${example} ${example}.cpp)
   target_link_libraries(${example} PRIVATE jacobi::motion)
 endforeach()

@@ -1,13 +1,26 @@
-# This is an CMakeLists.txt example file for using the UR driver in your CMake project
 cmake_minimum_required(VERSION 3.11)
 
 
-project(using-jacobi)
+project(jacobi-abb-driver-examples)
 
 
-find_package(jacobi-motion REQUIRED)
-find_package(jacobi-universal-driver REQUIRED)
+option(BUILD_FIND_JACOBI "Find globally installed Jacobi libraries." ON)
 
 
-add_executable(move move.cpp)
-target_link_libraries(run PRIVATE jacobi::motion jacobi::universal-driver)
+if(BUILD_FIND_JACOBI)
+  find_package(jacobi-motion REQUIRED)
+  find_package(jacobi-universal-driver REQUIRED)
+endif()
+
+
+set(EXAMPLES_LIST
+  control_io
+  move
+  read_state
+  trajectory
+)
+
+foreach(example IN LISTS EXAMPLES_LIST)
+  add_executable(${example} ${example}.cpp)
+  target_link_libraries(${example} PRIVATE jacobi::motion jacobi::universal-driver)
+endforeach()
