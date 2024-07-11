@@ -7,7 +7,7 @@ project(jacobi-examples)
 option(BUILD_FIND_MOTION "Find a globally installed motion library." ON)
 
 
-if (BUILD_FIND_MOTION)
+if(BUILD_FIND_MOTION)
   find_package(jacobi-motion REQUIRED)
 endif()
 
