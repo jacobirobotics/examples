@@ -4,7 +4,12 @@ cmake_minimum_required(VERSION 3.11)
 project(jacobi-examples)
 
 
-find_package(jacobi-motion REQUIRED)
+option(BUILD_FIND_MOTION "Find a globally installed motion library." ON)
+
+
+if (BUILD_FIND_MOTION)
+  find_package(jacobi-motion REQUIRED)
+endif()
 
 
 set(MOTION_EXAMPLES_LIST
