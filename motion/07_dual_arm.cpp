@@ -13,13 +13,13 @@ int main() {
     yumi->set_speed(0.2);
 
     // 2. Calculate forward and inverse kinematics of left and right arms
-    const auto tcp_right = yumi->right.calculate_tcp({0, -0.3, 0, 0.2, 0, 0.1, 0});
+    const auto tcp_right = yumi->right->calculate_tcp({0, -0.3, 0, 0.2, 0, 0.1, 0});
     std::cout << "Right TCP Position: " << tcp_right.translation() << std::endl;
 
-    const auto tcp_left = yumi->left.calculate_tcp({0, -0.4, 0, 0, 0, 0, 0});
+    const auto tcp_left = yumi->left->calculate_tcp({0, -0.4, 0, 0, 0, 0, 0});
     std::cout << "Left TCP Position: " << tcp_left.translation() << std::endl;
 
-    const auto joint_position_right = yumi->right.inverse_kinematics(tcp_left);
+    const auto joint_position_right = yumi->right->inverse_kinematics(tcp_left);
     if (!joint_position_right) {
         std::cout << "Could not find a inverse solution!" << std::endl;
         return -1;
