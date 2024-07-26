@@ -7,9 +7,8 @@ if __name__ == '__main__':
     robot = FrankaPanda()
     robot.set_speed(0.2)
 
-    # 2. Set up the planner with the cycle time of the robot (alias the timer interval of trajectory steps)
-    planner = Planner(robot, delta_time=0.001)  # [s]
-    planner.set_server_url('http://localhost:8080')
+    # 2. Set up the planner
+    planner = Planner(robot)
 
     # [Cloud version] Authenticate with your account API key by setting
     # the `JACOBI_API_KEY` environment variable.

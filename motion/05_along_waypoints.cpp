@@ -12,8 +12,8 @@ int main() {
     auto robot = std::make_shared<FrankaPanda>();
     robot->set_speed(0.2);
 
-    // 2. Set up the planner with the cycle time of the robot (alias the timer interval of trajectory steps)
-    auto planner = std::make_shared<Planner>(robot, 0.001); // [s]
+    // 2. Set up the planner
+    auto planner = std::make_shared<Planner>(robot);
 
     // [Cloud version] Authenticate with your account API key by setting
     // the `JACOBI_API_KEY` environment variable.
