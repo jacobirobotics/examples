@@ -1,6 +1,6 @@
 # Jacobi Examples
 
-Collection of developer examples and sample projects for the Jacobi libraries. Let us know if you'd like to see more!
+Collection of developer examples and [sample projects](https://docs.jacobirobotics.com/solutions/sample-projects/index.html) for the Jacobi libraries. Let us know if you'd like to see more!
 
 
 ## Jacobi Motion Library
