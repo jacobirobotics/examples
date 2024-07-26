@@ -1,3 +1,3 @@
-# Robotic Assembly
+# Assembly
 
 Within the rapidly transforming world of manufacturing automation, robotic assembly stands out as a crucial technology. It involves the use of 6-axis robots to efficiently position, fit, assemble and construct different components into a wide range of products, with high degree of precision and accuracy. Programming robotic assembly cells remains a challenge when relying on traditional methods, requiring a tedious manual process of tuning motion parameters for each component. This not only makes it time-consuming but also limits the flexibility and adaptability of the assembly process. In this tutorial, we introduce a short program created using the Jacobi platform, designed to be easily configurable for the assembly of various components.
