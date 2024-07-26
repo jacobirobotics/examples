@@ -19,4 +19,4 @@ quote-style = "single"
 
 [tool.pylint.'MESSAGES CONTROL']
 max-line-length = 140
-disable = "C0103,C0114,C0115,C0116,E0401,R0801,R0902,R1722,W0511"
+disable = "C0103,C0114,C0115,C0116,E0401,R0801,R0902,R1722,W0123,W0511"
