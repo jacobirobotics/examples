@@ -7,7 +7,7 @@ if __name__ == '__main__':
     robot = UniversalUR10e()
     robot.base = Frame(z=0.3)  # [m]
     robot.flange_to_tcp = Frame(z=0.15)  # [m]
-    robot.set_speed(0.1)  # relative to max speed
+    robot.set_speed(0.6)  # relative to max speed
 
     # 2. Setup obstacles in the robot's environment
     environment = Environment(robot)
