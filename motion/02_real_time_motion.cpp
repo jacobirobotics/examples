@@ -18,11 +18,8 @@ int main() {
 
     // 2. Set up the planner with the cycle time of the robot (alias the timer interval of trajectory steps)
     //    Here, we skip the environment and all collision checking, so all motion calculations are real-time
-    //    capable and take usually less than 0.1ms in the on-prem version.
+    //    capable and take usually less than 0.1ms.
     auto planner = std::make_shared<Planner>(robot, 0.01); // [s]
-
-    // [Cloud version] Authenticate with your account API key by setting
-    // the `JACOBI_API_KEY` environment variable.
 
     // 3. Define start and goal positions and plan the motion
     Config home_joint_position {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};

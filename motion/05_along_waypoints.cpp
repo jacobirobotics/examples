@@ -15,9 +15,6 @@ int main() {
     // 2. Set up the planner
     auto planner = std::make_shared<Planner>(robot);
 
-    // [Cloud version] Authenticate with your account API key by setting
-    // the `JACOBI_API_KEY` environment variable.
-
     LowLevelMotion motion;
     motion.start = {-1.27, 0.61, -0.46, 0.0, -1.81, 0.0, 0.0};
     motion.intermediate_positions = {

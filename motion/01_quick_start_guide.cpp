@@ -30,10 +30,7 @@ int main() {
     // 3. Set up the planner with the environment
     auto planner = std::make_shared<Planner>(environment);
 
-    // [Cloud version] Authenticate with your account API key by setting
-    // the `JACOBI_API_KEY` environment variable.
-
-    // [On-prem version] You can optionally accelerate the computation to milliseconds by loading a trained motion plan
+    // You can optionally accelerate the computation to milliseconds by loading a trained motion plan
     // planner.load_motion_plan('quick-start.jacobi-plan');
 
     // 4. Define some start and goal positions and plan the motion

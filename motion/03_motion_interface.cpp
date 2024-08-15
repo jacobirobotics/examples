@@ -32,9 +32,6 @@ int main() {
     // 3. Set up the planner with the cycle time of the robot (alias the timer interval of trajectory steps)
     auto planner = std::make_shared<Planner>(environment, 0.01); // [s]
 
-    // [Cloud version] Authenticate with your account API key by setting
-    // the `JACOBI_API_KEY` environment variable.
-
     // 4. Define motions that we want to compute
     Waypoint home {{0.0, 0.0, 0.0, 0.0, 0.0, 0.0}}; // [rad]
     Waypoint buffer {{-0.467, 0.2692, -0.3035, -0.1806, 0.0021, 0.0}}; // [rad]

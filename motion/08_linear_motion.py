@@ -11,9 +11,6 @@ if __name__ == '__main__':
     # 2. Set up the planner without any obstacles
     planner = Planner(robot, delta_time=0.01)  # [s]
 
-    # [Cloud version] Authenticate with your account API key by setting
-    # the `JACOBI_API_KEY` environment variable.
-
     # 3. Define start and goal positions
     motion = LinearMotion(
         start=Frame.from_euler(-0.5, 0.9, 0.3, 3.14, 0, 0),

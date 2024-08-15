@@ -26,9 +26,6 @@ if __name__ == '__main__':
     # 4.1 Set up the joint planner that considers left <-> right collisions
     planner = Planner(environment)
 
-    # [Cloud version] Authenticate with your account API key by setting
-    # the `JACOBI_API_KEY` environment variable.
-
     trajectory = planner.plan(
         start=[0, -0.3, 0, 0, 0, 0, 0] + [0, 0.3, 0, 0, 0, 0, 0],
         goal=[0, 0.3, 0, 0.2, 0, 0, 0] + [0, -0.5, 0, 0.4, 0, 0, 0],
