@@ -3,7 +3,7 @@ from jacobi import Planner
 
 if __name__ == '__main__':
     # 1. Set up planner by passing the project name in Jacobi Studio
-    planner = Planner(project='My Project', delta_time=0.01)
+    planner = Planner.load_from_studio('My Project')
 
     # 2. Plan motion defined in Studio project
     trajectory = planner.plan('Home to Camera')

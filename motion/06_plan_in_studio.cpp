@@ -7,7 +7,7 @@ using namespace jacobi;
 
 int main() {
     // 1. Set up planner by passing the project name in Jacobi Studio
-    auto planner = std::make_shared<Planner>("My Project", 0.01);  // delta_time in [s]
+    auto planner = Planner::load_from_studio("My Project");
 
     // 2. Plan motion defined in Studio project
     const auto trajectory = planner->plan("Home to Camera");
