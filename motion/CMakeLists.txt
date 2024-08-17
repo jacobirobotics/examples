@@ -21,6 +21,7 @@ set(EXAMPLES_LIST
   06_plan_in_studio
   07_dual_arm
   08_linear_motion
+  09_path_following
 )
 
 foreach(example IN LISTS EXAMPLES_LIST)
