@@ -32,8 +32,7 @@ if __name__ == '__main__':
             studio.set_camera_image_encoded(image.encode(), camera)
 
     else:
-        color_image = driver.get_color_image()
-        depth_image = driver.get_depth_image()  # also get depth image
+        color_image, depth_image = driver.get_images()
 
         plt.subplot(1, 2, 1)
         plt.imshow(color_image)

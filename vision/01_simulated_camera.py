@@ -24,8 +24,7 @@ if __name__ == '__main__':
     driver = SimulatedCameraDriver(camera, studio=studio)
 
     # 4. Get images from Studio and plot them
-    color_image = driver.get_color_image()
-    depth_image = driver.get_depth_image()
+    color_image, depth_image = driver.get_images()  # or just read a single image via `get_color_image`
 
     plt.subplot(1, 2, 1)
     plt.imshow(color_image)

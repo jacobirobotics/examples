@@ -28,7 +28,7 @@ if __name__ == '__main__':
     # 3. Get and visualize live sensor data
     if args.studio:
         while args.loop:
-            color_image, depth_image = driver.get_images()
+            color_image, _ = driver.get_images()
             image = ColorImage(color_image)
             studio.set_camera_image_encoded(image.encode(), camera)
 
