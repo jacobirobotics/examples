@@ -19,4 +19,4 @@ jobs:
       run: |
         python3 -m pip install ruff pylint
         ruff check . --preview
-        pylint -j2 drivers motion projects
+        pylint -j2 drivers motion projects vision

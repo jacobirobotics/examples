@@ -8,9 +8,14 @@ Collection of developer examples and [sample projects](https://docs.jacobiroboti
 Bite-size examples in `motion/` on how to load projects from Studio, add obstacles on-the-fly, plan different types of motions, or calculate forward and inverse kinematics.
 
 
-## Jacobi Drivers
+## Jacobi Robot Drivers
 
 A few examples in `drivers/` on how to read the current state of the robot, move along a pre-calculated trajectory or directly to a goal position, and control the robot's I/O.
+
+
+## Jacobi Vision Library
+
+A few examples in `vision/` on how to communicate with Studio to simulate cameras, read real sensor data from an Intel RealSense or Photoneo PhoXi camera.
 
 
 ## Sample Projects
