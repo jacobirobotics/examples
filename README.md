@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="360" src="https://raw.githubusercontent.com/jacobirobotics/examples/main/docs/logo.svg?sanitize=true">
+  <img width="80" src="https://raw.githubusercontent.com/jacobirobotics/examples/main/docs/icon.svg?sanitize=true">
   <h3 align="center">
     Examples and Sample Projects
   </h3>
