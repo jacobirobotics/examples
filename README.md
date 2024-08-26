@@ -1,11 +1,11 @@
 <div align="center">
-  <img width="340" src="https://raw.githubusercontent.com/jacobirobotics/examples/main/docs/logo.svg?sanitize=true">
+  <img width="360" src="https://raw.githubusercontent.com/jacobirobotics/examples/main/docs/logo.svg?sanitize=true">
   <h3 align="center">
     Examples and Sample Projects
   </h3>
 </div>
 
-Collection of developer examples and [sample projects](https://docs.jacobirobotics.com/solutions/sample-projects/index.html) for the Jacobi libraries. Let us know if you'd like to see more!
+This repo hosts a collection of developer examples and [sample projects](https://docs.jacobirobotics.com/solutions/sample-projects/index.html) for the Jacobi libraries. Let us know if you'd like to see more!
 
 
 ## Jacobi Motion Library
