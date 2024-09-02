@@ -11,7 +11,7 @@ if __name__ == '__main__':
     robot = YaskawaGP12()
     robot.base = Frame(z=0.765)
     robot.flange_to_tcp = Frame(z=0.2)
-    # robot.end_effector_obstacle = Convex.load_from_file(project_path / 'ee_hull.obj')
+    robot.end_effector_obstacle = Convex.load_from_file(project_path / 'ee_hull.obj')
     robot.max_velocity = [4.3, 3.4, 4.3, 7.0, 7.0, 9.0]
     robot.max_acceleration = [7.0, 7.0, 7.5, 15.0, 15.0, 18.0]
     robot.max_jerk = [100.0, 100.0, 100.0, 100.0, 100.0, 100.0]
