@@ -14,7 +14,7 @@ int main() {
     auto robot = std::make_shared<UniversalUR5e>();
     auto planner = std::make_shared<Planner>(robot);
 
-    auto driver = std::make_shared<SimulatedDriver>(planner, false, false, true, true);
+    auto driver = std::make_shared<SimulatedDriver>(planner, true, false, true);
     // auto driver = std::make_shared<SimulatedDriver::Controller>(true, true);  // Or as standalone controller with I/Os only
 
     // Create simulated I/O

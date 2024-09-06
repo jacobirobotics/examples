@@ -7,8 +7,8 @@ if __name__ == '__main__':
     robot = UniversalUR5e()
     planner = Planner(robot)
 
-    driver = SimulatedDriver(planner, serve_io_viewer=True, keep_io_viewer_running=True)
-    # driver = SimulatedDriver.Controller(keep_io_viewer_running=True)  # Or as standalone controller with I/Os only
+    driver = SimulatedDriver(planner, sync_with_studio=True, keep_running=True)
+    # driver = SimulatedDriver.Controller(keep_running=True)  # Or as standalone controller with I/Os only
 
     # Create simulated I/O
     driver.create_io('sensor', default_value=1)
