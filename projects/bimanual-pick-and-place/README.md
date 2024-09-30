@@ -1,0 +1,3 @@
+# Bimanual Pick and Place
+
+Robotic systems with bimanual pick and place capabilities use two robotic arms to simultaneously pick up and manipulate objects, enabling more complex and versatile handling tasks. The adoption of bimanual robots has been increasing in industries such as manufacturing and assembly due to their ability to perform operations that require coordination between two hands, closely mimicking human dexterity and improving efficiency. However, programming and synchronizing two robotic arms introduces significant complexity, leading to higher costs in engineering, calibration, and maintenance. In this tutorial, we introduce a short program created using Jacobi, designed to be easily configurable for bimanual pick and place operations.
