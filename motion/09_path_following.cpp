@@ -58,7 +58,7 @@ int main() {
         Frame::from_translation(0.3, -0.3, -0.3),
         Frame::from_translation(0.3, 0.3, -0.3),
     };
-    motion = PathFollowingMotion(robot, std::make_shared<BlendedPath>(waypoints, 0.1, false), velocity);
+    motion = PathFollowingMotion(robot, Path::from_waypoints(waypoints, 0.1, false), velocity);
     traj = planner->plan(motion);
     std::cout << "Trajectory duration: " << traj->duration << " [s]" << std::endl;
 
@@ -71,13 +71,13 @@ int main() {
         Frame::from_translation(0.3, -0.3, -0.3),
         Frame::from_translation(0.3, 0.3, -0.3),
     };
-    motion = PathFollowingMotion(robot, std::make_shared<BlendedPath>(waypoints, 0.1, true), velocity);
+    motion = PathFollowingMotion(robot, Path::from_waypoints(waypoints, 0.1, true), velocity);
     traj = planner->plan(motion);
     std::cout << "Trajectory duration: " << traj->duration << " [s]" << std::endl;
 
     // 7. Follow the blended trajectory without a predefined blend radius
     std::cout << "\nBlended trajectory without a predefined blend radius" << std::endl;
-    motion = PathFollowingMotion(robot, std::make_shared<BlendedPath>(waypoints, true), velocity);
+    motion = PathFollowingMotion(robot, Path::from_waypoints(waypoints, std::nullopt, true), velocity);
     traj = planner->plan(motion);
     std::cout << "Trajectory duration: " << traj->duration << " [s]" << std::endl;
 }

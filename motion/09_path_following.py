@@ -54,7 +54,7 @@ if __name__ == '__main__':
         Frame.from_translation(0.3, 0.3, -0.3),
     ]
 
-    motion = PathFollowingMotion(robot, BlendedPath(waypoints, 0.1), velocity)
+    motion = PathFollowingMotion(robot, Path.from_waypoints(waypoints, 0.1), velocity)
     traj = planner.plan(motion)
     print(f'Trajectory duration: {traj.duration} [s]')
 
@@ -68,12 +68,12 @@ if __name__ == '__main__':
         Frame.from_translation(0.3, 0.3, -0.3),
     ]
 
-    motion = PathFollowingMotion(robot, BlendedPath(waypoints, 0.1, True), velocity)
+    motion = PathFollowingMotion(robot, Path.from_waypoints(waypoints, 0.1, True), velocity)
     traj = planner.plan(motion)
     print(f'Trajectory duration: {traj.duration} [s]')
 
     # 7. Follow the blended trajectory without a predefined blend radius
     print('\nBlended trajectory without a predefined blend radius')
-    motion = PathFollowingMotion(robot, BlendedPath(waypoints, True), velocity)
+    motion = PathFollowingMotion(robot, Path.from_waypoints(waypoints, None, True), velocity)
     traj = planner.plan(motion)
     print(f'Trajectory duration: {traj.duration} [s]')
