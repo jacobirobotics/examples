@@ -1,4 +1,4 @@
-from jacobi import Frame, Planner, PathFollowingMotion, LinearPath, CircularPath, BlendedPath
+from jacobi import Frame, Planner, LinearPath, CircularPath, Path, PathFollowingMotion
 from jacobi.robots import UniversalUR10e
 
 
