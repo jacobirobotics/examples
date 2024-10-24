@@ -36,9 +36,9 @@ int main() {
     // 3. Follow the circular trajectory with constant global orientation
     std::cout << "\nCircular trajectory with constant global orientation" << std::endl;
     start = Frame::from_euler(0.7, 0.8, 0.3, 0.0, 0.0, 0.0);
-    const std::vector<double> center = {0.7, 0.7, 0.6};
+    const std::array<double, 3> center = {0.7, 0.7, 0.6};
     const float angle = 3.0;
-    const std::vector<double> normal = {1.0, 0.0, 0.0};
+    const std::array<double, 3> normal = {1.0, 0.0, 0.0};
     motion = PathFollowingMotion(robot, std::make_shared<CircularPath>(start, angle, center, normal, false), velocity);
     traj = planner->plan(motion);
     std::cout << "Trajectory duration: " << traj->duration << " [s]" << std::endl;

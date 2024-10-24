@@ -1,6 +1,5 @@
 from jacobi import Frame, Planner, PathFollowingMotion, LinearPath, CircularPath, BlendedPath
 from jacobi.robots import UniversalUR10e
-import numpy as np
 
 
 if __name__ == '__main__':
@@ -31,9 +30,9 @@ if __name__ == '__main__':
     # 3. Follow the circular trajectory with constant global orientation
     print('\nCircular trajectory with constant global orientation')
     start = Frame.from_euler(0.7, 0.8, 0.3, 0.0, 0.0, 0.0)
-    center = np.array([0.7, 0.7, 0.6])
+    center = [0.7, 0.7, 0.6]
     angle = 3.0
-    normal = np.array([1.0, 0.0, 0.0])
+    normal = [1.0, 0.0, 0.0]
     motion = PathFollowingMotion(robot, CircularPath(start, angle, center, normal), velocity)
     traj = planner.plan(motion)
     print(f'Trajectory duration: {traj.duration} [s]')
