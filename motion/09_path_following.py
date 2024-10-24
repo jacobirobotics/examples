@@ -18,14 +18,14 @@ if __name__ == '__main__':
     goal = Frame.from_translation(0.6, -0.3, 0.1)
     motion = PathFollowingMotion(robot, LinearPath(start, goal), velocity)
     traj = planner.plan(motion)
-    print(f'Trajectory duration: {traj.duration} [s]')
+    print(f'Trajectory duration: {traj.duration:0.3f} [s]')
 
     # 2. Follow the linear trajectory with orientation interpolation
     print('\nLinear trajectory with orientation interpolation')
     goal = Frame.from_euler(0.6, -0.3, 0.1, 0.0, 1.571, 0.0)
     motion = PathFollowingMotion(robot, LinearPath(start, goal), velocity)
     traj = planner.plan(motion)
-    print(f'Trajectory duration: {traj.duration} [s]')
+    print(f'Trajectory duration: {traj.duration:0.3f} [s]')
 
     # 3. Follow the circular trajectory with constant global orientation
     print('\nCircular trajectory with constant global orientation')
@@ -35,13 +35,13 @@ if __name__ == '__main__':
     normal = [1.0, 0.0, 0.0]
     motion = PathFollowingMotion(robot, CircularPath(start, angle, center, normal), velocity)
     traj = planner.plan(motion)
-    print(f'Trajectory duration: {traj.duration} [s]')
+    print(f'Trajectory duration: {traj.duration:0.3f} [s]')
 
     # 4. Follow the circular trajectory with constant tool-to-surface orientation
     print('\nCircular trajectory with constant tool-to-surface orientation')
     motion = PathFollowingMotion(robot, CircularPath(start, angle, center, normal, True), velocity)
     traj = planner.plan(motion)
-    print(f'Trajectory duration: {traj.duration} [s]')
+    print(f'Trajectory duration: {traj.duration:0.3f} [s]')
 
     # 5. Follow the blended trajectory with constant global orientation
     print('\nBlended trajectory with constant global orientation')
@@ -53,9 +53,9 @@ if __name__ == '__main__':
         Frame.from_translation(0.3, 0.3, -0.3),
     ]
 
-    motion = PathFollowingMotion(robot, Path.from_waypoints(waypoints, 0.1), velocity)
+    motion = PathFollowingMotion(robot, Path.from_waypoints(waypoints, 0.1, False), velocity)
     traj = planner.plan(motion)
-    print(f'Trajectory duration: {traj.duration} [s]')
+    print(f'Trajectory duration: {traj.duration:0.3f} [s]')
 
     # 6. Follow the blended trajectory with constant tool-to-surface orientation
     print('\nBlended trajectory with constant tool-to-surface orientation')
@@ -69,10 +69,10 @@ if __name__ == '__main__':
 
     motion = PathFollowingMotion(robot, Path.from_waypoints(waypoints, 0.1, True), velocity)
     traj = planner.plan(motion)
-    print(f'Trajectory duration: {traj.duration} [s]')
+    print(f'Trajectory duration: {traj.duration:0.3f} [s]')
 
     # 7. Follow the blended trajectory without a predefined blend radius
     print('\nBlended trajectory without a predefined blend radius')
     motion = PathFollowingMotion(robot, Path.from_waypoints(waypoints, None, True), velocity)
     traj = planner.plan(motion)
-    print(f'Trajectory duration: {traj.duration} [s]')
+    print(f'Trajectory duration: {traj.duration:0.3f} [s]')
