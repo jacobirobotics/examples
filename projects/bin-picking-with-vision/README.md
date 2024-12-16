@@ -1,0 +1,3 @@
+# Bin Picking with Vision
+
+Vision-guided robotic bin picking is an advanced automation technology that enables robots to autonomously locate, identify, and retrieve randomly oriented objects from unstructured containers or bins. By integrating sophisticated computer vision systems with robotic manipulation, these solutions address the challenge of handling cluttered, densely packed, and unpredictably positioned items in manufacturing, logistics, and warehousing environments. Cameras allow robots to perceive object geometries, calculate grasping points, and plan precise pick trajectories, significantly reducing manual labor and increasing throughput. In this tutorial, we introduce a vision-guided bin picking system using Jacobi motion planner with live visual data.
