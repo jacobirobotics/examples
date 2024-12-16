@@ -14,7 +14,7 @@ int main() {
     auto robot = std::make_shared<YaskawaGP12>();
     robot->set_base(Frame::z(0.765));
     robot->set_flange_to_tcp(Frame::z(0.2));
-    robot->set_end_effector_obstacle(Convex::load_from_file(project_path / "ee_hull.obj"));
+    robot->set_end_effector_obstacle(MeshFile {project_path / "ee_hull.obj"});
     robot->max_velocity = {4.3, 3.4, 4.3, 7.0, 7.0, 9.0};
     robot->max_acceleration = {7.0, 7.0, 7.5, 15.0, 15.0, 18.0};
     robot->max_jerk = {100.0, 100.0, 100.0, 100.0, 100.0, 100.0};
@@ -26,7 +26,7 @@ int main() {
             continue;
         }
 
-        environment->add_obstacle(Convex::load_from_file(file));
+        environment->add_obstacle(MeshFile {file});
     }
 
     // 3. Set up the planner with the cycle time of the robot (alias the timer interval of trajectory steps)
