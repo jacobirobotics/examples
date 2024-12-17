@@ -1,8 +1,7 @@
 # Open an empty Studio project to run this example
 
-import matplotlib.pyplot as plt
-
 from jacobi import Camera, Intrinsics, Studio, Frame, Obstacle, Box
+from jacobi_vision import ImageType
 from jacobi_vision.drivers import SimulatedCameraDriver
 
 
@@ -24,10 +23,5 @@ if __name__ == '__main__':
     driver = SimulatedCameraDriver(camera, studio=studio)
 
     # 4. Get images from Studio and plot them
-    color_image, depth_image = driver.get_images()  # or just read a single image via `get_color_image`
-
-    plt.subplot(1, 2, 1)
-    plt.imshow(color_image)
-    plt.subplot(1, 2, 2)
-    plt.imshow(depth_image)
-    plt.show()
+    image = driver.get_image(image_type=ImageType.RGBD)  # or just read a single image via `ImageType.Color`
+    image.show()

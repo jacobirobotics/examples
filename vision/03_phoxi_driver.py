@@ -1,9 +1,7 @@
 from argparse import ArgumentParser
 
-import matplotlib.pyplot as plt
-
 from jacobi import Camera, Frame, Intrinsics, Studio
-from jacobi_vision.images import ColorImage
+from jacobi_vision.images import ImageType
 from jacobi_vision.drivers import PhoXiCameraDriver
 
 
@@ -27,18 +25,9 @@ if __name__ == '__main__':
 
     # 3. Get and visualize live sensor data
     if args.studio:
-        while args.loop:
-            color_image, _ = driver.get_images()
-            image = ColorImage(color_image)
+        for image in driver.stream(image_type=ImageType.Color):
             studio.set_camera_image_encoded(image.encode(), camera)
 
     else:
-        min_clipping_distance, max_clipping_distance = 0.2, 3.0  # [m]
-        color_image, depth_image = driver.get_images()
-        depth_image[(depth_image < min_clipping_distance) | (depth_image > max_clipping_distance)] = 0
-
-        plt.subplot(1, 2, 1)
-        plt.imshow(color_image)
-        plt.subplot(1, 2, 2)
-        plt.imshow(depth_image, cmap='jet')
-        plt.show()
+        image = driver.get_image(image_type=ImageType.RGBD)
+        image.show()

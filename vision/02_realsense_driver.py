@@ -1,9 +1,7 @@
 from argparse import ArgumentParser
 
-import matplotlib.pyplot as plt
-
 from jacobi import Camera, Frame, Intrinsics, Studio
-from jacobi_vision.images import ColorImage
+from jacobi_vision.images import ImageType
 from jacobi_vision.drivers import RealsenseCameraDriver
 
 
@@ -27,15 +25,9 @@ if __name__ == '__main__':
 
     # 3. Get and visualize live sensor data
     if args.studio:
-        while args.loop:
-            image = ColorImage(driver.get_color_image())
+        for image in driver.stream(image_type=ImageType.Color):
             studio.set_camera_image_encoded(image.encode(), camera)
 
     else:
-        color_image, depth_image = driver.get_images()
-
-        plt.subplot(1, 2, 1)
-        plt.imshow(color_image)
-        plt.subplot(1, 2, 2)
-        plt.imshow(depth_image, cmap='jet')
-        plt.show()
+        image = driver.get_image(image_type=ImageType.RGBD)
+        image.show()
