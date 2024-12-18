@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 
-project(jacobi-abb-driver-examples)
+project(jacobi-universal-driver-examples)
 
 
 option(BUILD_FIND_JACOBI "Find globally installed Jacobi libraries." ON)
