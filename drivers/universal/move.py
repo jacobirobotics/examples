@@ -1,4 +1,4 @@
-import time
+from time import sleep
 
 from jacobi import Planner
 from jacobi.drivers import UniversalDriver
@@ -30,24 +30,24 @@ if __name__ == '__main__':
 
     # Move to: Pose0
     result0 = driver.move_to(goal_pose0)
-    print('Move Pose0 result:', result0)
+    print(f'Move to home result: {result0}')
 
     # Move to: Pose1
     result1 = driver.move_to(goal_pose1)
-    print('Move Pose1 result:', result1)
+    print(f'Move to pose1 result: {result1}')
 
     # Move asynchronously to: Pose2
     future_result2 = driver.move_to_async(goal_pose2)
 
     # Abort with Stop
-    time.sleep(1)
+    sleep(1)
     result_stop = driver.stop()
-    print('Stop robot:', result_stop)
-    print('Robot position after stop:', driver.current_joint_position)
+    print(f'Stop robot: {result_stop}')
+    print(f'Robot position after stop: {driver.current_joint_position}')
 
     # Move to: Pose2 - Get Result
     result2 = future_result2.get()
-    print(f'Move Pose2 result: {result2}')
+    print(f'Move to pose2 result: {result2}')
 
     # Move to: Pose0
     result3 = driver.move_to(goal_pose0)

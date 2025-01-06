@@ -36,11 +36,11 @@ int main() {
 
     // Move to: Pose0
     const auto result0 = driver->move_to(goal_pose0);
-    std::cout << "Move Pose0 result: " << result0.get_description() << std::endl;
+    std::cout << "Move to home result: " << result0.get_description() << std::endl;
 
     // Move to: Pose1
     const auto result1 = driver->move_to(goal_pose1);
-    std::cout << "Move Pose1 result: " << result1.get_description() << std::endl;
+    std::cout << "Move to pose1 result: " << result1.get_description() << std::endl;
 
     // Move asynchronously to: Pose2
     const auto future_result2 = driver->move_to_async(goal_pose2);
@@ -53,9 +53,9 @@ int main() {
 
     // Move to: Pose2 - Get Result
     const auto result2 = future_result2.get();
-    std::cout << "Move Pose2 result: " << result2.get_description() << std::endl;
+    std::cout << "Move to pose2 result: " << result2.get_description() << std::endl;
 
     // Move to: Pose0
     const auto result3 = driver->move_to(goal_pose0);
-    std::cout << "Move Pose0 result: " << result3.get_description() << std::endl;
+    std::cout << "Move to home result: " << result3.get_description() << std::endl;
 }
