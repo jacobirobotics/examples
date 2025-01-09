@@ -142,7 +142,7 @@ class VisionBinPicking:
         self.studio.update_obstacle(o)
 
         # Release the object from the arm
-        self.robot.item_obstacle = None
+        self.robot.item = None
         self.studio.set_item(None)
 
     def detect_objects(self, image):

@@ -138,7 +138,7 @@ class LabRobot:
         self.studio.remove_obstacle(test_tube)
         test_tube.name = 'item'
         test_tube.origin = Frame(x=0.0, y=0.035, z=0.0, a=-1.57, b=0.0, c=0.0)
-        robot.item_obstacle = test_tube
+        robot.item = test_tube
         self.studio.set_item(test_tube, robot=robot)
 
     def _move_arm_to_center(self, robot):
@@ -181,14 +181,14 @@ class LabRobot:
         self._attach_cap_to_arm(self.dual_arm.right)
 
     def _remove_item_from_arm(self, robot):
-        robot.item_obstacle = None
+        robot.item = None
         self.studio.set_item(None, robot=robot)
 
     def _attach_cap_to_arm(self, robot):
         cap_obs = self.cap_obstacle
         cap_obs.name = 'cap_item'
         cap_obs.origin = Frame(x=0.0, y=0.0, z=0.015, a=3.14, b=0.0, c=0.0)
-        robot.item_obstacle = cap_obs
+        robot.item = cap_obs
         self.studio.set_item(cap_obs, robot=robot)
 
     def right_arm_dispose_cap(self):

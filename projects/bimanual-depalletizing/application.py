@@ -79,13 +79,13 @@ class BimanualDepalletizer:
     def set_item(self, box_to_set, robot):
         box_as_item = box_to_set.with_origin(Frame(z=-box_to_set.collision.z / 2))
         self.studio.set_item(box_as_item, robot)
-        robot.item_obstacle = box_as_item
+        robot.item = box_as_item
         self.studio.remove_obstacle(box_to_set)
         self.planner.environment.remove_obstacle(box_to_set)
 
     def remove_item(self, robot):
         self.studio.set_item(None, robot)
-        robot.item_obstacle = None
+        robot.item = None
 
     def single_arm_interlock_pick_cycle(self, box_left, box_right):
         # Left arm from place to pick, right arm from pick to place

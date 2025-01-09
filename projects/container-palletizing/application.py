@@ -154,7 +154,7 @@ def run_application():
         # Grasp the box, and update collision model and Studio
         driver.studio.remove_obstacle(box_at_pick)
         box_as_item = info.box.with_origin(Frame(z=-box_height / 2, c=conveyor_feed_rot))
-        robot.item_obstacle = box_as_item
+        robot.item = box_as_item
         driver.studio.set_item(box_as_item)
 
         # Define pick -> place motion
@@ -169,7 +169,7 @@ def run_application():
         driver.run(trajectory)
 
         # Release box from the robot
-        robot.item_obstacle = None
+        robot.item = None
         driver.studio.set_item(None)
 
         # Add box at place position to collision model and Studio

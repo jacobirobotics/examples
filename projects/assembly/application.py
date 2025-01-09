@@ -60,10 +60,10 @@ class AssemblyApplication:
         await self.grasp()
 
         cylinder.origin = Frame.Identity()
-        self.robot.item_obstacle = cylinder
+        self.robot.item = cylinder
 
         events = Studio.Events()
-        events[0.0] = Studio.Events.set_item(self.robot.item_obstacle)
+        events[0.0] = Studio.Events.set_item(self.robot.item)
         events[0.0] = Studio.Events.remove_obstacle(cylinder)
 
         # 3. Move from pick -> Angled assembly approach
@@ -89,7 +89,7 @@ class AssemblyApplication:
         # 5. Release cylinder
         await self.release()
 
-        self.robot.item_obstacle = None
+        self.robot.item = None
 
     async def run(self):
         # 0. Move to home position

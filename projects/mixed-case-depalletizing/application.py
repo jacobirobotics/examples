@@ -85,7 +85,7 @@ class MixedCaseDepalletizer:
 
         box_as_item = box_at_pick.with_origin(Frame(z=-box_at_pick.collision.z / 2))
         self.studio.set_item(box_as_item)
-        self.robot.item_obstacle = box_as_item
+        self.robot.item = box_as_item
 
         self.studio.remove_obstacle(box_at_pick)
         self.planner.environment.remove_obstacle(box_at_pick)
@@ -108,7 +108,7 @@ class MixedCaseDepalletizer:
         self.planner.environment.add_obstacle(box_at_place)
 
         self.studio.set_item(None)
-        self.robot.item_obstacle = None
+        self.robot.item = None
 
     def run(self):
         box_1_obstacles = self.load_pattern_onto_pallet(self.box_1_pattern, self.pallet_left, self.box1)

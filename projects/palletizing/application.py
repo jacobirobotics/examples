@@ -51,7 +51,7 @@ if __name__ == '__main__':
             # Grasp the box, and update collision model and Studio
             driver.studio.remove_obstacle(box_at_pick)
             box_as_item = Obstacle('box_as_item', box_geometry, Frame(z=-box_geometry.z / 2), color=box_color)
-            robot.item_obstacle = box_as_item
+            robot.item = box_as_item
             driver.studio.set_item(box_as_item)
 
             # Calculate place position on pallet
@@ -66,7 +66,7 @@ if __name__ == '__main__':
             driver.run(trajectory)
 
             # Release box
-            robot.item_obstacle = None
+            robot.item = None
             driver.studio.set_item(None)
 
             # Add box at place position to collision model and Studio
