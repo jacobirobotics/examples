@@ -21,7 +21,7 @@ set(EXAMPLES_LIST
 )
 
 foreach(example IN LISTS EXAMPLES_LIST)
-  add_executable(${example} ${example}.cpp)
-  target_compile_features(${example} PRIVATE cxx_std_17)
-  target_link_libraries(${example} PRIVATE jacobi::motion jacobi::fanuc-driver)
+  add_executable(fanuc-${example} ${example}.cpp)
+  target_compile_features(fanuc-${example} PRIVATE cxx_std_17)
+  target_link_libraries(fanuc-${example} PRIVATE jacobi::motion jacobi::fanuc-driver)
 endforeach()

@@ -21,7 +21,7 @@ set(EXAMPLES_LIST
 )
 
 foreach(example IN LISTS EXAMPLES_LIST)
-  add_executable(${example} ${example}.cpp)
-  target_compile_features(${example} PRIVATE cxx_std_17)
-  target_link_libraries(${example} PRIVATE jacobi::motion jacobi::yaskawa-driver)
+  add_executable(yaskawa-${example} ${example}.cpp)
+  target_compile_features(yaskawa-${example} PRIVATE cxx_std_17)
+  target_link_libraries(yaskawa-${example} PRIVATE jacobi::motion jacobi::yaskawa-driver)
 endforeach()
