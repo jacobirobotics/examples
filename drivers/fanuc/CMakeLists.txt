@@ -15,6 +15,7 @@ endif()
 
 set(EXAMPLES_LIST
   control_io
+  move
   read_state
   trajectory
 )
